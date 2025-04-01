@@ -8,11 +8,13 @@ metadata:
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-event: '[push]'
     pipelinesascode.tekton.dev/on-target-branch: '[BRANCH]'
+    custom/annotation: 'custom/annotation'
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: APPLICATION
     appstudio.openshift.io/component: COMPONENT
     pipelines.appstudio.openshift.io/type: build
+    custom/label: label123
   name: COMPONENT-on-push
   namespace: NAMESPACE
 spec:
