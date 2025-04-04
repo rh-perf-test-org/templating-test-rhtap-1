@@ -235,6 +235,9 @@ spec:
           operator: in
           values:
             - "true"
+      workspaces:
+        - name: source
+          workspace: workspace
     - name: build-source-image
       params:
         - name: BINARY_IMAGE
@@ -406,6 +409,28 @@ spec:
             value: task
         resolver: bundles
   workspaces:
+    - name: workspace
+      volumeClaimTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          accessModes:
+          - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+        status: {}
     - name: workspace-amd64
+      volumeClaimTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          accessModes:
+          - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+        status: {}
     - name: git-auth
-      optional: true
+      secret:
+        secretName: '{{ git_auth_secret }}'
