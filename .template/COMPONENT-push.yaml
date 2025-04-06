@@ -22,7 +22,7 @@ spec:
   - name: git-url
     value: '{{repo_url}}'
   - name: output-image
-    value: quay.io/QUAY_REPO/NAMESPACE/APPLICATION/COMPONENT:{{revision}}
+    value: quay.io/QUAY_REPO/NAMESPACE/COMPONENT:{{revision}}
   - name: path-context
     value: .
   - name: revision
